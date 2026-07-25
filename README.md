@@ -31,8 +31,9 @@ Primbyul.
 
 ## Screenshot
 
-> Add a GIF or still image of Primbyul in motion here.
-> (For example, an action GIF, or a frame such as `assets/frames/adult/wag/0.png`.)
+<p align="center">
+  <img src="assets/frames/adult/wag/0.png" alt="Primbyul" width="220">
+</p>
 
 ## Get it and run it
 
