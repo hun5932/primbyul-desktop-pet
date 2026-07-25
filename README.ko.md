@@ -29,8 +29,9 @@
 
 ## 스크린샷
 
-> 여기에 프림별이 도는 GIF나 정지 이미지 한 장을 넣어 주세요.
-> (예: 실제 동작 GIF, 또는 `assets/frames/adult/wag/0.png` 같은 프레임)
+<p align="center">
+  <img src="assets/frames/adult/wag/0.png" alt="Primbyul" width="220">
+</p>
 
 ## 받기 · 실행
 
@@ -46,27 +47,6 @@
 - 버전은 `config/project.json`을 기준으로 한 번에 변경합니다.
 - Windows와 macOS를 같은 512×512 프레임으로 관리합니다.
 - 배포 전에 소스·프레임·실행 형식·ZIP 권한을 자동 검사합니다.
-
-## GitHub에 올리기
-
-처음에는 **비공개 저장소**로 올리는 것을 권장합니다. Windows에서 Git과
-GitHub CLI를 설치한 뒤:
-
-```powershell
-.\tools\publish_github.ps1
-```
-
-Mac/Linux:
-
-```bash
-./tools/publish_github.sh
-```
-
-스크립트는 `primbyul-desktop-pet`이라는 비공개 저장소를 만들고 첫 커밋을
-업로드합니다. 올리기 전에 참고사진·비밀키 유출 검사(`validate_github.py`,
-`validate_source.py`)를 자동으로 실행하며, 검사에 실패하면 업로드를
-중단합니다. 공개 저장소나 저장소 이름 변경, GitHub Desktop/Web 업로드,
-자동 릴리스 방법은 [GITHUB.md](docs/GITHUB.md)를 확인하세요.
 
 ## 가장 빠른 시작
 
@@ -172,7 +152,7 @@ python tools\build_all.py
 - Mac 앱은 메뉴 막대에서 모든 설정을 복구할 수 있습니다.
 - 빌드 스크립트는 코드서명 인증서를 포함하지 않습니다.
 - 원본 참고사진은 Git에서 제외되며 실행·빌드에는 필요하지 않습니다.
-- 현재 공개 재사용 라이선스는 지정하지 않았습니다. 공개 오픈소스로
-  배포하려면 `docs/GITHUB.md`의 라이선스 항목을 먼저 결정하세요.
+- 프림 이미지는 개인 자산이라 재사용 라이선스가 없습니다. 소스 코드는 MIT
+  License를 따릅니다. `LICENSE` 파일을 참고하세요.
 - 실제 배포 전에는 각 운영체제에서 `docs/VERSION-AND-RELEASE.md`의 수동
   스모크 테스트를 반드시 실행해야 합니다.

@@ -50,27 +50,6 @@ for details.
 - Windows and macOS share the same 512×512 frames.
 - Sources, frames, executable format, and ZIP permissions are checked automatically before release.
 
-## Publishing to GitHub
-
-Starting with a **private repository** is recommended. On Windows, after
-installing Git and the GitHub CLI:
-
-```powershell
-.\tools\publish_github.ps1
-```
-
-macOS / Linux:
-
-```bash
-./tools/publish_github.sh
-```
-
-The script creates a private repository named `primbyul-desktop-pet` and uploads
-the first commit. Before uploading, it automatically runs the reference-photo and
-secret-leak checks (`validate_github.py`, `validate_source.py`) and aborts the
-upload if either check fails. For a public repository, renaming, GitHub
-Desktop/Web upload, or automated releases, see [GITHUB.md](docs/GITHUB.md).
-
 ## Quick start
 
 Requirements:
@@ -178,7 +157,7 @@ rules.
 - The Mac app can restore every setting from the menu bar.
 - The build scripts do not include a code-signing certificate.
 - Original reference photos are excluded from Git and are not needed to run or build.
-- No public reuse license is set yet. To distribute as public open source, decide
-  the license first, per the license section in `docs/GITHUB.md`.
+- No public reuse license is set for the artwork; the Prim images are personal
+  and not for reuse. Source code is under the MIT License. See `LICENSE`.
 - Before an actual release, you must run the manual smoke tests in
   `docs/VERSION-AND-RELEASE.md` on each operating system.
