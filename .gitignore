@@ -1,0 +1,39 @@
+# Build & release output
+build/
+dist/*
+!dist/.gitkeep
+
+# Python cache
+__pycache__/
+
+# Windows build byproducts (in case anything is compiled outside build/)
+*.pdb
+*.res
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+.idea/
+.vscode/
+
+# Environment files — the app uses none today; kept so a stray .env can't slip in
+.env
+.env.*
+!.env.example
+
+# Signing material and secrets must never be committed
+*.p12
+*.pfx
+*.key
+*.pem
+secrets/
+
+# Prim's original photos are private, local-only production references.
+# The generated animation frames stay tracked.
+assets/reference-photos/*
+!assets/reference-photos/README.md
+
+# Superseded version-named icon; builds use assets/icons/Primbyul.ico
+assets/icons/Primbyul-v*.ico

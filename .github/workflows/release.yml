@@ -1,0 +1,61 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Build draft release
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Set up Zig
+        uses: mlugg/setup-zig@d1434d08867e3ee9daa34448df10607b98908d29 # v2.2.1
+        with:
+          version: 0.14.0-dev.2456+a68119f8f
+
+      - name: Verify tag and source
+        run: |
+          python tools/verify_release_tag.py "${GITHUB_REF_NAME}"
+          python tools/validate_github.py
+          python tools/validate_source.py
+
+      - name: Build release files
+        run: |
+          python tools/build_all.py
+          python tools/package_source.py
+          python tools/write_release_checksums.py
+
+      - name: Create draft GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            dist/Primbyul_v*.exe \
+            dist/Primbyul_v*_macOS.zip \
+            dist/Primbyul_v*_Source.zip \
+            dist/SHA256SUMS.txt \
+            --verify-tag \
+            --generate-notes \
+            --draft \
+            --title "Primbyul ${GITHUB_REF_NAME}"

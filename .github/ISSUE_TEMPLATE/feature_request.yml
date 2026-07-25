@@ -1,0 +1,26 @@
+name: Feature request
+description: Propose a focused behavior or maintenance improvement
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What concrete problem should this change solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance test
+      description: How can a maintainer verify that the change is complete?
+    validations:
+      required: true

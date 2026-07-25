@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Validate and cross-build
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Set up Zig
+        uses: mlugg/setup-zig@d1434d08867e3ee9daa34448df10607b98908d29 # v2.2.1
+        with:
+          version: 0.14.0-dev.2456+a68119f8f
+
+      - name: Validate repository
+        run: |
+          python -m py_compile tools/*.py
+          python tools/validate_github.py
+          python tools/validate_source.py
+
+      - name: Build Windows and macOS
+        run: python tools/build_all.py
+
+      - name: Package source and checksums
+        run: |
+          python tools/package_source.py
+          python tools/write_release_checksums.py
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: primbyul-${{ github.sha }}
+          path: |
+            dist/Primbyul_v*.exe
+            dist/Primbyul_v*_macOS.zip
+            dist/Primbyul_v*_Source.zip
+            dist/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14

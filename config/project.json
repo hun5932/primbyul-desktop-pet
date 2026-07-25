@@ -1,0 +1,8 @@
+{
+  "name": "Primbyul",
+  "display_name": "프림별 데스크톱 펫",
+  "version": "1.5.0",
+  "windows_target": "x86_64-windows-gnu",
+  "macos_minimum": "11.0",
+  "bundle_identifier": "com.primbyul.desktop-pet"
+}

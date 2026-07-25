@@ -1,0 +1,84 @@
+#include <windows.h>
+
+#define IDI_PRIMBYUL 102
+
+IDI_PRIMBYUL ICON "../../assets/icons/Primbyul.ico"
+1 RT_MANIFEST "Primbyul.exe.manifest"
+
+1100 RCDATA "../../assets/frames/adult/idle/0.png"
+1101 RCDATA "../../assets/frames/adult/idle/1.png"
+1102 RCDATA "../../assets/frames/adult/idle/2.png"
+1103 RCDATA "../../assets/frames/adult/idle/3.png"
+1110 RCDATA "../../assets/frames/adult/run/0.png"
+1111 RCDATA "../../assets/frames/adult/run/1.png"
+1112 RCDATA "../../assets/frames/adult/run/2.png"
+1113 RCDATA "../../assets/frames/adult/run/3.png"
+1130 RCDATA "../../assets/frames/adult/wag/0.png"
+1131 RCDATA "../../assets/frames/adult/wag/1.png"
+1132 RCDATA "../../assets/frames/adult/wag/2.png"
+1133 RCDATA "../../assets/frames/adult/wag/3.png"
+1140 RCDATA "../../assets/frames/adult/play/0.png"
+1141 RCDATA "../../assets/frames/adult/play/1.png"
+1142 RCDATA "../../assets/frames/adult/play/2.png"
+1143 RCDATA "../../assets/frames/adult/play/3.png"
+1150 RCDATA "../../assets/frames/adult/watch/0.png"
+1151 RCDATA "../../assets/frames/adult/watch/1.png"
+1152 RCDATA "../../assets/frames/adult/watch/2.png"
+1153 RCDATA "../../assets/frames/adult/watch/3.png"
+1160 RCDATA "../../assets/frames/adult/sit/0.png"
+1161 RCDATA "../../assets/frames/adult/sit/1.png"
+1162 RCDATA "../../assets/frames/adult/sit/2.png"
+1163 RCDATA "../../assets/frames/adult/sit/3.png"
+
+2100 RCDATA "../../assets/frames/puppy/idle/0.png"
+2101 RCDATA "../../assets/frames/puppy/idle/1.png"
+2102 RCDATA "../../assets/frames/puppy/idle/2.png"
+2103 RCDATA "../../assets/frames/puppy/idle/3.png"
+2110 RCDATA "../../assets/frames/puppy/run/0.png"
+2111 RCDATA "../../assets/frames/puppy/run/1.png"
+2112 RCDATA "../../assets/frames/puppy/run/2.png"
+2113 RCDATA "../../assets/frames/puppy/run/3.png"
+2130 RCDATA "../../assets/frames/puppy/wag/0.png"
+2131 RCDATA "../../assets/frames/puppy/wag/1.png"
+2132 RCDATA "../../assets/frames/puppy/wag/2.png"
+2133 RCDATA "../../assets/frames/puppy/wag/3.png"
+2140 RCDATA "../../assets/frames/puppy/play/0.png"
+2141 RCDATA "../../assets/frames/puppy/play/1.png"
+2142 RCDATA "../../assets/frames/puppy/play/2.png"
+2143 RCDATA "../../assets/frames/puppy/play/3.png"
+2150 RCDATA "../../assets/frames/puppy/watch/0.png"
+2151 RCDATA "../../assets/frames/puppy/watch/1.png"
+2152 RCDATA "../../assets/frames/puppy/watch/2.png"
+2153 RCDATA "../../assets/frames/puppy/watch/3.png"
+2160 RCDATA "../../assets/frames/puppy/sit/0.png"
+2161 RCDATA "../../assets/frames/puppy/sit/1.png"
+2162 RCDATA "../../assets/frames/puppy/sit/2.png"
+2163 RCDATA "../../assets/frames/puppy/sit/3.png"
+
+1 VERSIONINFO
+ FILEVERSION 1,5,0,0
+ PRODUCTVERSION 1,5,0,0
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "Primbyul\0"
+            VALUE "FileDescription", "프림별 데스크톱 펫\0"
+            VALUE "FileVersion", "1.5.0\0"
+            VALUE "InternalName", "Primbyul\0"
+            VALUE "OriginalFilename", "Primbyul_v1.5.exe\0"
+            VALUE "ProductName", "프림별 데스크톱 펫\0"
+            VALUE "ProductVersion", "1.5.0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0412, 1200
+    END
+END
